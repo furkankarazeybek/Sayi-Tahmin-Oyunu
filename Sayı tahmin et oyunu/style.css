@@ -1,0 +1,110 @@
+html{
+    font-size:62.5%;   /*buunla font büyüklüğünü %62,5 olarak  ayarladık*/
+}
+body{
+    font-family:sans-serif;
+    color:#eee;
+    background-color:#222;
+}
+
+header {
+    position:relative; /*eski konuma göre yer değiştirir ve diğer elemanlar sanki orda varmış gibi onun eski konumunu doldurmazlar.Görecelidir sanki varmış gibi*/
+    height:35vh;
+    border-bottom: 7px solid #eee;
+
+}
+
+main{
+   height: 65vh;
+   color:#eee;
+   display:flex;    /*flexbox tasarım için bunu başta yazman gerekir display flex ile iki section birbirine yapışır*/
+   align-items:center;   /*yukarıdan ve aşağıdan ortalaar*/
+   justify-content: space-around;  /*iki section arasında boşluk bıraktı yukarıdan sağdan soldan eşit boşluklar bıraktı*/
+ 
+}
+h1 {
+    font-size:4rem;
+    text-align:center;
+    position:absolute; /*headera göre position(konum) alır.*/
+    width:100%;
+    left:50%;
+    transform: translate(-50%,-50%);  /*(sağa kaydırma, aşağı kaydırma) - olduğunda da sola ve yukarı kaydırır. */
+  
+  }
+
+.left{  /*classlara erişirken .left gibi başına nokta koyarsın */
+width:52rem;  /* left sectionunın genişliği 52 rem olarak ayarladı */
+display:flex;
+flex-direction:column;  /*bir kolonu dolduracak şekilde input  ve button alt alta gelir*/
+align-items:center;   /*input ve button kolonun ortasına gelir */
+}
+
+.right { 
+  width:52rem;   /*right sectionun genisliği 52 rem olarak ayarlandı*/
+  font-size:30px;
+
+}
+
+.between{ 
+  font-size:1.4rem;
+  position:absolute;  /*sıfırdan sanki soldan yeniden yaratılıyor gibi konumu vardır.Diğer nesneler onun yerini doldurur.  Nesneler o yokmuş gibi davranır. Burda header etiketine göre konumlanır */ 
+  top:2rem;
+  right:2rem;
+}
+ 
+.again{
+    position:absolute;
+    top:2rem;
+    left:2rem;
+}
+
+.number{
+  background-color: #eee;
+  color:#333;
+  font-size:6rem;
+  width: 15rem;
+  padding:3rem 0rem;  /* sırayla üst-alt ve sağ sol paddingleri  */
+  text-align: center;
+  position:absolute; /*header etiketine göre sol ve üstten başlar konumlanmaya*/
+  bottom:0;   /*aşağıya mesafesi 0 olsun(dipte) header etiketine göre */
+  left:50%;  /*soldan yüzde 50 uzaklaşssın*/
+  transform:translate(-50%,50%);  /* transform:tranlate(sağa doğru gider, aşağı doğru gider)  - olduğunda bu koşullar tam tersine döner. Önemli kısım bu numberın width ve highnı ele alarak bunları gerçekleştirir. Tamamen header etikeini değil. Transform.translatein özelliği budur */
+}
+.again{
+   position:absolute; /*header etiketine göre sağ ve üstten başlayarak  ele alır
+ */
+  top:2rem; /*2 rem aşağı */
+  left:2rem;  /*2 rem sağa*/ 
+  padding:2rem 3rem;
+  cursor:pointer;
+  font-size:20px;
+}
+.guess {
+    background: none;
+    color: inherit; /* main etiketinden bu rengi kalıtsal olarak alır */ 
+    border: 4px solid #eee;
+    font-family:inherit ;   /*body etiketinden kalıtsal olarak bu fontu alır*/
+    font-size:5rem;
+    padding:2.5rem;
+    width:25rem; 
+    text-align:center;  /*yazı ortaya alındı*/
+    display:block;  /* alt alta geçmesini sağlamak için display block kullanıldı.*/
+    margin-bottom:3rem; /*aşağı kısma 3 remlik margin verildi */
+
+}
+.check {
+  border:none;   /*sınır yok */
+  background-color:#eee;
+  color:#222;
+  font-size:2rem;
+  padding:2rem 3rem;  /*üst-alt 2rem ve sağ sol 3 rem padding  */
+  cursor:pointer;  /*cursor:pointer ile mousun bunun bir buton olduğunu anlar */
+
+}
+
+
+/* .check:hover {  /*mouse butona denk geldiğinde olacak değişim */
+  /*  backgorund-color:#555; /*üzerine geldiğinde bir tık daha gri bir renk alır*/
+ 
+/*}
+
